@@ -1,4 +1,4 @@
-import './styles.scss'
+import './styles/styles.scss'
 import Header from './components/Header'
 import About from './components/About'
 import Projects from './components/Projects'
@@ -6,20 +6,11 @@ import { useRef } from 'react'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 function App() {
-  const header = useRef()
-  const about = useRef()
-  const projects = useRef()
-
-  const scrollToSection = (elementRef) => {
-    window.scrollTo({
-      top: elementRef.current.offsetTop,
-      behavior: 'smooth'
-    })
-  }
+  const ref = useRef()
 
   return (
     <div>
-      <Parallax pages = {3}>
+      <Parallax pages = {3} ref = {ref}>
         <ParallaxLayer
           offset={0} 
           speed={1}
@@ -28,7 +19,9 @@ function App() {
             backgroundColor: "#2C3639"
           }}
         >
-          <Header />
+          <Header 
+            handleClick = {() => ref.current.scrollTo(1)}
+          />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -42,10 +35,12 @@ function App() {
 
         <ParallaxLayer 
           offset = {1} 
-          speed = {0.5}
-          factor = {2}
+          speed = {1.5}
+          factor = {2.5}
         >
-          <About />
+          <About 
+            handleClick = {() => ref.current.scrollTo(2)}
+          />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -61,7 +56,9 @@ function App() {
           offset = {2}
           speed = {1.25}
         >
-          <Projects />
+          <Projects 
+            handleClick = {() => ref.current.scrollTo(0)}
+          />
         </ParallaxLayer>
       </Parallax>
     </div>

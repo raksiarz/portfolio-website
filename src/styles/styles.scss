@@ -1,3 +1,5 @@
+@import './arrow-mixin.scss';
+
 $accent-color: #FFB301;
 $light-color: #E8F3F1;
 $dark-color: #2C3639;
@@ -20,7 +22,10 @@ section {
 header {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .text {
         width: 100%;
@@ -29,8 +34,6 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: left;
-        margin-right: 25rem;
 
         h3 {
             font-size: 10rem;
@@ -41,6 +44,18 @@ header {
             font-size: 5rem;
             letter-spacing: 1px;
             color: $light-color;
+        }
+    }
+
+    .header__arrow-box {
+        margin-bottom: 2rem;
+
+        .header__arrow {
+            @include arrow($light-color)
+        }
+
+        .header__arrow:hover {
+            @include arrow-hover($accent-color)
         }
     }
 }
@@ -93,13 +108,37 @@ nav {
         color: $accent-color;
     }
 
+    .about__div {
+        padding: 2rem 20rem 3rem 20rem;
+        margin-top: 2rem;
+
+        h4 {
+            margin-bottom: 2rem;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p {
+                width: 50%;
+                letter-spacing: 0.5px;
+            }
+
+            img {
+                margin-right: 5%;
+            }
+        }
+    }
+
     .skills {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 50%;
+        height: 60%;
 
         .skills__icons {
             display: flex;
@@ -110,13 +149,42 @@ nav {
 
             .icon {
                 font-size: 4rem;
+                color: $dark-color;
                 cursor: pointer;
                 transition: color .3s ease;
             }
 
-            .icon:hover {
-                color: $accent-color;
+            .html:hover {
+                color: #e34c26;
             }
+
+            .sass:hover {
+                color: #cc6699;
+            }
+
+            .js:hover {
+                color: #f0db4f;
+            }
+
+            .react:hover {
+                color: #61dafb;
+            }
+
+            .git:hover {
+                color: #F1502F;
+            }
+        }
+    }
+
+    .about__arrow-box {
+        margin-bottom: 2rem;
+
+        .about__arrow {
+            @include arrow($dark-color)
+        }
+
+        .about__arrow:hover {
+            @include arrow-hover($accent-color)
         }
     }
 }
@@ -126,6 +194,10 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    a {
+        text-decoration: none;
+    }
 
     h4 {
         font-size: 4rem;
@@ -142,14 +214,38 @@ nav {
         width: 100%;
 
         .project {
-            width: 50%;
+            min-width: 1000px;
             height: 200px;
-            background-color: $dark-color;
+            background-color: $light-color;
             border: solid 0px #14FFEC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             h5 {
-                color: $light-color;
+                font-size: 2.5rem;
+                color: $dark-color;
             }
+        }
+    }
+
+    .project__arrows-up-box {
+        position: absolute;
+        right: 5%;
+        bottom: 5%;
+        border-radius: 50%;
+        background-color: $light-color;
+        cursor: pointer;
+
+        .project__arrows-up {
+            font-size: 2rem;
+            padding: 1rem 1.5rem;
+            color: $dark-color;
+            transition: color .2s ease;
+        }
+
+        .project__arrows-up:hover {
+            color: $accent-color;
         }
     }
 }

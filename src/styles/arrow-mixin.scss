@@ -1,0 +1,12 @@
+@mixin arrow($color) {
+  color: $color;
+  font-size: 4rem;
+  cursor: pointer;
+  padding: .5rem 1rem;
+  transition: all .15s ease;
+}
+
+@mixin arrow-hover($color) {
+  color: $color;
+  transform: translateY(-10px) scale(1.15);
+}
