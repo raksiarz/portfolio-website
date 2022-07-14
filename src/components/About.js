@@ -1,3 +1,4 @@
+import '../styles/about.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown} from '@fortawesome/fontawesome-free-solid'
 import { 

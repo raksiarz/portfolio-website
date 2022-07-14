@@ -1,0 +1,58 @@
+@import './arrow-mixin.scss';
+@import './colors.scss';
+
+/*$accent-color: #FFB301;
+$light-color: #E8F3F1;
+$dark-color: #2C3639;*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    padding: 2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    h4 {
+        font-size: 24px;
+        color: $accent-color;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+
+        li {
+            margin: 0 1rem;
+            font-size: 18px;
+            letter-spacing: 1px;
+            color: $light-color;
+            cursor: pointer;
+            transition: color .5s ease;
+        }
+
+        li:hover {
+            color: $accent-color;
+        }
+    }
+}

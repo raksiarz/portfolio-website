@@ -1,3 +1,4 @@
+import '../styles/projects.scss'
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleUp } from '@fortawesome/fontawesome-free-solid'

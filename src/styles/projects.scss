@@ -1,0 +1,62 @@
+@import './colors.scss';
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+    }
+
+    h4 {
+        font-size: 4rem;
+        letter-spacing: 1px;
+        color: $accent-color;
+    }
+
+    .projects__section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 80%;
+        width: 100%;
+
+        .project {
+            min-width: 1000px;
+            height: 200px;
+            background-color: $light-color;
+            border: solid 0px #14FFEC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h5 {
+                font-size: 2.5rem;
+                color: $dark-color;
+            }
+        }
+    }
+
+    .project__arrows-up-box {
+        position: absolute;
+        right: 5%;
+        bottom: 5%;
+        border-radius: 50%;
+        background-color: $light-color;
+        cursor: pointer;
+
+        .project__arrows-up {
+            font-size: 2rem;
+            padding: 1rem 1.5rem;
+            color: $dark-color;
+            transition: color .2s ease;
+        }
+
+        .project__arrows-up:hover {
+            color: $accent-color;
+        }
+    }
+}
